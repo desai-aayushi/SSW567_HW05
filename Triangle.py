@@ -1,26 +1,29 @@
-def classifyTriangle(a,b,c):
+"""This module is for classification of traingle"""
 
-    if a > 200 or b > 200 or c > 200:
+
+# method for classification
+def classify_triangle(side_a, side_b, side_c):
+    if side_a > 200 or side_b > 200 or side_c > 200:
         return 'InvalidInput'
-        
-    if a <= 0 or b <= 0 or c <= 0:
+
+    if side_a <= 0 or side_b <= 0 or side_c <= 0:
         return 'InvalidInput'
 
-    if not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)):
-        return 'InvalidInput';
+    if not (isinstance(side_a, int) and isinstance(side_b, int) and isinstance(side_c, int)):
+        return 'InvalidInput'
 
-    if (a >= (b + c)) or (b >= (a + c)) or (c >= (a + b)):
+    if (side_a >= (side_b + side_c)) or (side_b >= (side_a + side_c)) or (side_c >= (side_a + side_b)):
         return 'NotATriangle'
 
-    if a == b and b == a and c == b:
+    if side_a == side_b and side_b == side_a and side_c == side_b:
         return 'Equilateral'
-    elif ((a ** 2) + (b ** 2)) == (c ** 2):
+    elif ((side_a ** 2) + (side_b ** 2)) == (side_c ** 2):
         return 'Right'
-    elif ((b ** 2) + (c ** 2)) == (a ** 2):
+    elif ((side_b ** 2) + (side_c ** 2)) == (side_a ** 2):
         return 'Right'
-    elif ((a ** 2) + (c ** 2)) == (b ** 2):
+    elif ((side_a ** 2) + (side_c ** 2)) == (side_b ** 2):
         return 'Right'
-    elif (a != b) and  (b != c) and (a != c):
+    elif (side_a != side_b) and (side_b != side_c) and (side_a != side_c):
         return 'Scalene'
     else:
         return 'Isoceles'
