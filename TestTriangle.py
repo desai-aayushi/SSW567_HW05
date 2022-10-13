@@ -35,6 +35,15 @@ class TestTriangles(unittest.TestCase):
     def testNotATriangle(self):
         self.assertEqual(classifyTriangle(2, 3, 10), 'NotATriangle', '2,3,10 is not a triangle')
 
+    # add test cases for coverage report:100%
+
+    def testInvalidTriangleF(self):
+        self.assertEqual(classifyTriangle(300, 300, 300), 'InvalidInput', '300,300,300 is invalid')
+
+    def testRightTriangleD(self):
+        self.assertEqual(classifyTriangle(3, 5, 4), 'Right', '4,3,5 is a Right triangle')
+
+
 if __name__ == '__main__':
     print('Running unit tests')
     unittest.main()
